@@ -111,7 +111,7 @@
 			if (checkData()) {
 				var userId = $("#userId").val();
 				var pass = $("#password").val();
-				var timestamp = new Date().getTime();
+				var timestamp = new Date().getTime() + "";
 
 				var a = userId + pass;
 				var b = sha512(a);
