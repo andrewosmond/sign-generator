@@ -112,8 +112,15 @@
 				var userId = $("#userId").val();
 				var pass = $("#password").val();
 				var currentTime = new Date();
-				var timestamp = currentTime.getFullYear() + String(currentTime.getMonth() + 1).padStart(2, '0') + String(currentTime.getDate()).padStart(2, '0') + String(currentTime.getHours()).padStart(2, '0') + String(currentTime.getMinutes()).padStart(2, '0') + String(currentTime.getSeconds()).padStart(2, '0') + "";
-
+				var year = currentTime.getFullYear();
+				var month = String(currentTime.getMonth() + 1).padStart(2, '0');
+				var date = String(currentTime.getDate()).padStart(2, '0');
+				var hours = String(currentTime.getHours()).padStart(2, '0');
+				var minutes = String(currentTime.getMinutes()).padStart(2, '0');
+				var seconds = String(currentTime.getSeconds()).padStart(2, '0');
+				var ms = String(currentTime.getMilliseconds()).padStart(3, '0');
+				var timestamp = year + month + date + hours + minutes + seconds + ms;
+				
 				var a = userId + pass;
 				var b = sha512(a);
 				var c = timestamp + b;
