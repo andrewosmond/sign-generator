@@ -111,7 +111,8 @@
 			if (checkData()) {
 				var userId = $("#userId").val();
 				var pass = $("#password").val();
-				var timestamp = new Date().getTime() + "";
+				var currentTime = new Date();
+				var timestamp = currentTime.getFullYear() + String(currentTime.getMonth() + 1).padStart(2, '0') + String(currentTime.getDate()).padStart(2, '0') + String(currentTime.getHours()).padStart(2, '0') + String(currentTime.getMinutes()).padStart(2, '0') + String(currentTime.getSeconds()).padStart(2, '0') + "";
 
 				var a = userId + pass;
 				var b = sha512(a);
