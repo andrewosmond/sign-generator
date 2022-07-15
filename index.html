@@ -77,6 +77,11 @@
 	</div>
 
 	<script>
+		$('document').ready(function () {
+		   $('#userId').val('avantrade');
+		   $('#password').val('password');
+		})
+
 		function checkuserId() {
 			var userId = $("#userId").val();
 			if (userId.length <= 0){
